@@ -1,0 +1,9 @@
+html, body {
+	margin: 0, auto;
+
+}
+
+#films {
+	height: 500px;
+	width: 100%;
+}
