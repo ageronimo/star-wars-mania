@@ -9,7 +9,8 @@ $(document).ready(function(){
 			type: 'GET',
 			success: function(data) {
 				console.log('Success: Your film data has been gathered!')
-				$('#films').html(data);
+				$('#films').html(`<p> ${JSON.stringify(data)} </p>`);
+				console.log(JSON.stringify(data));
 			},
 			error: function() {
 				console.log('ERROR');
@@ -21,3 +22,11 @@ $(document).ready(function(){
 
 //ES6
 const buildHtmlElements = responseData => 'whatever';
+
+
+// helpful commands
+
+//
+// .addClass()
+// JSON.stringify() <- turns object to json string
+// JSON.parse() <- turns json string to object
