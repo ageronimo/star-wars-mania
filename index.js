@@ -3,7 +3,7 @@ console.log('Javascript is running...');
 // ES5
 
 let filmNum = [1,2,3,4,5,6,7];
-let dataType = ['title', 'director', 'episode', 'producer', 'openining_crawl', 'release date'];
+let dataType = ['title', 'director', 'episode_id', 'producer', 'opening_crawl', 'release_date'];
 
 /*$(document).ready(function(){
 	$('button').click(function(){
@@ -41,16 +41,16 @@ $(document).ready(function() {
 					console.log(data.title);
 					dataType.forEach(function(type) {
 						if (type === 'title') {
-							$('#films').append(`<h3> ${data[type]} </h3>`)
+							$('#films').append(`<h3 class="title"> ${data[type]} </h3>`)
 						} else {
-							$('#films').append(`<p> ${data[type]} </p>`);
+							$('#films').append(`<p class="${type}"> ${data[type]} </p>`);
 						}
 					});
 				},
 				error: function() {
-				console.log('ERROR');
-				$('films').html('Data could not be accessed!')
-			}
+					console.log('ERROR');
+					$('films').html('Data could not be accessed!')
+				}
 			})
 		})
 	})
@@ -67,15 +67,6 @@ foreach number [1-7]
 	
  	*/
 
-	
-
-// data to inject:
-//   title
-//   director
-//   episode
-//   producer
-//   opening_crawl
-//   release date
 
 
 //ES6
