@@ -5,7 +5,7 @@ console.log('Javascript is running...');
 let filmNum = [1,2,3,4,5,6,7];
 let dataType = ['title', 'director', 'episode', 'producer', 'openining_crawl', 'release date'];
 
-$(document).ready(function(){
+/*$(document).ready(function(){
 	$('button').click(function(){
 		console.log('processing...');
 		$.ajax({
@@ -16,6 +16,7 @@ $(document).ready(function(){
 				$('#films').html(`<p> ${JSON.stringify(data)} </p>`);
 				console.log('This is your data: ' + JSON.stringify(data));
 				console.log('this is the title: ' + data.title);
+
 			},
 			error: function() {
 				console.log('ERROR');
@@ -24,7 +25,36 @@ $(document).ready(function(){
 		})
 	})
 })
+*/
 
+$(document).ready(function() {
+	$('button').click(function() {
+		console.log('Processing request...');
+		filmNum.forEach(function(x) {
+			console.log(x);
+			$.ajax({
+				url: `https://swapi.co/api/films/${x}`,
+				type: 'GET',
+				success: function(data) {
+					// $('#films').html(`<p> ${data.title} </p>`);
+					// let makeObject = JSON.stringify(data);
+					console.log(data.title);
+					dataType.forEach(function(type) {
+						if (type === 'title') {
+							$('#films').append(`<h3> ${data[type]} </h3>`)
+						} else {
+							$('#films').append(`<p> ${data[type]} </p>`);
+						}
+					});
+				},
+				error: function() {
+				console.log('ERROR');
+				$('films').html('Data could not be accessed!')
+			}
+			})
+		})
+	})
+})
 
 // PSUEDO
 /* 
@@ -54,7 +84,7 @@ const buildHtmlElements = responseData => 'whatever';
 
 // helpful commands
 
-//
+// $("<p></p>").text("Text.");
 // .addClass()
 // JSON.stringify() <- turns object to json string
 // JSON.parse() <- turns json string to object
