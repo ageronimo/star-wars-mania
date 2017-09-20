@@ -6,4 +6,5 @@ html, body {
 #films {
 	/*height: 500px;*/
 	width: 100%;
+	justify-content: center;
 }

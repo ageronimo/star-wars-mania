@@ -42,9 +42,7 @@ let dataType = ['director', 'episode_id', 'producer', 'opening_crawl', 'release_
 
 //ES6
 const buildHtmlElements = response => {
-	// adds title
 	$('#films').append(`<h1 class="title">${'Film Title: ' + response.title}</h1>`);
-	// adds rest of the info
 	dataType.forEach(type => {
 		$('#films').append(`<p class="${type}">${response[type]}</p>`);
 	});
