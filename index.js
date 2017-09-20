@@ -41,7 +41,7 @@ $(document).ready(function() {
 					console.log(data.title);
 					dataType.forEach(function(type) {
 						if (type === 'title') {
-							$('#films').append(`<h3 class="title"> ${data[type]} </h3>`)
+							$('#films').append(`<h1 class="title"> ${data[type]} </h1>`)
 						} else {
 							$('#films').append(`<p class="${type}"> ${data[type]} </p>`);
 						}
