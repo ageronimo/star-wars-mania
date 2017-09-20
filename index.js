@@ -1,33 +1,11 @@
 console.log('Javascript is running...');
 
-// ES5
+// Original Solution (no ES6)
 
 let filmNum = [1,2,3,4,5,6,7];
 let dataType = ['title', 'director', 'episode_id', 'producer', 'opening_crawl', 'release_date'];
 
-/*$(document).ready(function(){
-	$('button').click(function(){
-		console.log('processing...');
-		$.ajax({
-			url: 'https://swapi.co/api/films/1',
-			type: 'GET',
-			success: function(data) {
-				console.log('Success: Your film data has been gathered!')
-				$('#films').html(`<p> ${JSON.stringify(data)} </p>`);
-				console.log('This is your data: ' + JSON.stringify(data));
-				console.log('this is the title: ' + data.title);
-
-			},
-			error: function() {
-				console.log('ERROR');
-				$('films').html('Data could not be accessed!')
-			}
-		})
-	})
-})
-*/
-
-$(document).ready(function() {
+/*$(document).ready(function() {
 	$('button').click(function() {
 		console.log('Processing request...');
 		filmNum.forEach(function(x) {
@@ -36,6 +14,7 @@ $(document).ready(function() {
 				url: `https://swapi.co/api/films/${x}`,
 				type: 'GET',
 				success: function(data) {
+
 					// $('#films').html(`<p> ${data.title} </p>`);
 					// let makeObject = JSON.stringify(data);
 					console.log(data.title);
@@ -54,18 +33,10 @@ $(document).ready(function() {
 			})
 		})
 	})
-})
+})*/
 
-// PSUEDO
-/* 
-foreach number [1-7]
-	ajax url[this]
-		success: foreach
- 			loop through data targets to inject
- 			make <p> for
- 			p.class loop ^
-	
- 	*/
+
+// call func pass data, render elements
 
 
 
